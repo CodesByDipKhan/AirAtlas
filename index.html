@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>WebTech LabTask_1</title>
+    <title>WebTech Lab</title>
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <img src="MainLogo.ico" alt="Application Logo" class="imgLogo">
-    <h3>WebTech Lab</h3>
+    <h2>WebTech Lab</h2>
     <div class="container">
         <div class="left">
             <h4>Air Quality Checker</h4>
-            <form>
+            <form id="uForm">
                 <label>Username : </label>
                 <input type="text" id="uName" placeholder="abc123" minlength="6">
                 <br><br>
@@ -220,9 +220,9 @@
                 <br><br>
                 <label>Gender : </label>
                 <label for="male">Male</label>
-                <input type="radio" id="uMale" name="gender" value="Male">
+                <input type="radio" id="uMale" name="gender" >
                 <label for="female">Female</label>
-                <input type="radio" id="uFemale" name="gender" value="Female">
+                <input type="radio" id="uFemale" name="gender">
                 <br><br>
                 <label>Background color:</label>
                 <input type="color" id="uColor">
@@ -231,7 +231,7 @@
                 <textarea rows="3px" cols="30px" id="uTxtarea"></textarea>
                 <br><br>
                 <a href="https://www.aiub.edu/" target="_blank"><label>Terms & Condition</label></a>
-                <input type="checkbox">
+                <input type="checkbox" id="uCheckbox">
                 <br><br>
                 <input type="reset" id="uReset">
                 <input type="submit" id="uSubmit">
@@ -242,5 +242,6 @@
             <div class="bottom">Div 3</div>
         </div>
     </div>
+    <script src="test.js"></script>
 </body>
 </html>

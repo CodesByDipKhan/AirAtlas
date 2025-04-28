@@ -57,5 +57,6 @@ document.getElementById("uForm").addEventListener("submit", function (e) {
         alert("Validation Failed:\n\n" + messages.join("\n"));
     } else {
         alert("Success! All inputs are valid.");
+        document.getElementById("uForm").reset();
     }
 });

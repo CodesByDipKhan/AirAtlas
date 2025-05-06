@@ -1,30 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>WebTech Lab</title>
-    <link rel="stylesheet" href="index.css">
-</head>
-<body>
-    <img src="MainLogo.ico" alt="Application Logo" class="imgLogo">
-    <h2>WebTech Lab</h2>
-    <div class="container">
-        <div class="left">
-            <h4>Air Quality Checker</h4>
-            <form id="uForm">
-                <label>Username : </label>
-                <input type="text" id="uName" placeholder="abc123" minlength="6">
-                <br><br>
-                <label>Email : </label>
-                <input type="email" id="uEmail" placeholder="abc@gmail.com" minlength="8">
-                <br><br>
-                <label>Password : </label>
-                <input type="password" id="uPass" placeholder="*******" minlength="8">
-                <br><br>
-                <label>Date of Birth : </label>
-                <input type="date" id="uDOB" placeholder="DD/MM/YYYY">
-                <br><br>
-                <label>Country : </label>
-                <select id="uCountry">
+    <head>
+        <title>WebTech LAB</title>
+        <link rel="icon" type="image/png" href="favicon.png">
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <h3 id="mainTitle">Air Quality Checker</h3>
+        <img src="logo.png" alt="logo of the software" class="mainLogo">
+        <div class="container">
+            <div class="left">
+                <form id="regForm">
+                    <h4 id="uReg">Registration</h4>
+                    <label for="uName">Name</label>
+                    <br>
+                    <input type="text" name="uName" id="uName" placeholder="abc">
+                    <br><br>
+                    <label for="uEmail">Email</label>
+                    <br>
+                    <input type="email" name="uEmail" id="uEmail" placeholder="abc@gmail.com">
+                    <br><br>
+                    <label for="uPass">Password</label>
+                    <br>
+                    <input type="password" name="uPass" id="uPass" placeholder="********">
+                    <br><br>
+                    <label for="uConPass">Confirm Password</label>
+                    <br>
+                    <input type="password" name="uConPass" id="uConPass" placeholder="********">
+                    <br><br>
+                    <label for="uDOB">Date of Birth</label>
+                    <br>
+                    <input type="date" name="uDOB" id="uDOB">
+                    <br><br>
+                    <label for="uCountry">Country</label>
+                    <br>
+                    <select name="uCountry" id="uCountry">
                     <option>Afghanistan</option>
                     <option>Albania</option>
                     <option>Algeria</option>
@@ -38,7 +48,7 @@
                     <option>Azerbaijan</option>
                     <option>Bahamas</option>
                     <option>Bahrain</option>
-                    <option>Bangladesh</option>
+                    <option selected>Bangladesh</option>
                     <option>Barbados</option>
                     <option>Belarus</option>
                     <option>Belgium</option>
@@ -216,32 +226,97 @@
                     <option>Yemen</option>
                     <option>Zambia</option>
                     <option>Zimbabwe</option>
-                </select>
-                <br><br>
-                <label>Gender : </label>
-                <label for="umale">Male</label>
-                <input type="radio" id="uMale" name="gender" >
-                <label for="ufemale">Female</label>
-                <input type="radio" id="uFemale" name="gender">
-                <br><br>
-                <label>Background color:</label>
-                <input type="color" id="uColor">
-                <br><br>
-                <label>Opinion : </label>
-                <textarea rows="3" cols="30" id="uTxtarea"></textarea>
-                <br><br>
-                <a href="https://www.aiub.edu/" target="_blank">Terms & Condition</a>
-                <input type="checkbox" id="uCheckbox">
-                <br><br>
-                <input type="reset" id="uReset">
-                <input type="submit" id="uSubmit">
-            </form>
+                    </select>
+                    <br><br>
+                    <label for="uGender">Gender</label>
+                    <br>
+                    <label for="uMale">Male</label>
+                    <input type="radio" name="uGender" id="uMale" value="Male">
+                    <label for="uFemale">Female</label>
+                    <input type="radio" name="uGender" id="uFemale" value="Female">
+                    <br><br>
+                    <label for="uColor">Color</label>
+                    <br>
+                    <input type="color" name="uColor" id="uColor">
+                    <br><br>
+                    <label for="uTxtArea">Opinion</label>
+                    <br>
+                    <textarea name="uTxtArea" id="uTxtArea" rows="5" cols="25"></textarea>
+                    <br><br>
+                    <a href="https://www.aiub.edu" target="_blank">Terms&Conditions</a>
+                    <input type="checkbox" name="uCheckbox" id="uCheckbox">
+                    <br><br>
+                    <button type="button" name="uReset" id="uReset">RESET</button>
+                    <button type="button" name="uSubmit" id="uSubmit">SUBMIT</button>
+                </form>
+            </div>
+            <div class="right">
+                <div class="top">
+                    <form>
+                        <h4 id="uLog">Login</h4>
+                        <label for="logEmail">Email</label><br>
+                        <input type="email" name="logEmail" id="logEmail"><br>
+                        <label for="logPass">Password</label><br>
+                        <input type="password" name="logPass" id="logPass"><br><br>
+                        <button type="button" name="logReset" id="logReset">RESET</button>
+                        <button type="button" name="logSubmit" id="logSubmit">SUBMIT</button>
+                    </form>
+                </div>
+                <div class="bottom">
+                    <div class="table-wrapper">
+                        <table>
+                            <tr>
+                                <th>City</th>
+                                <th>AQI</th>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </table>
+                        <div class="table-overlay">
+                            <p>Login Required</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="right">
-            <div class="top">Div 2</div>
-            <div class="bottom">Div 3</div>
-        </div>
-    </div>
-    <script src="test.js"></script>
-</body>
+        <script src="index.js"></script>
+    </body>
 </html>

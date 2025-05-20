@@ -76,14 +76,14 @@
         if (!termsAccepted) {
             errors.push("You must accept Terms & Conditions.");
         }
-
-        
+     
         if (errors.length > 0) {
             alert(errors.join("\n"));
-        } else {
-            alert("Registration successful");
-            document.querySelector("#regForm").reset();
-        }
+        } 
+        else {
+            alert("Registration successful!");
+            document.getElementById("regForm").submit();  
+        }        
     });
 
     

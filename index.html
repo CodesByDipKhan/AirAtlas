@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>WebTech LAB</title>
+        <title>Home Page</title>
         <link rel="icon" type="image/png" href="favicon.png">
         <link rel="stylesheet" href="index.css">
     </head>
@@ -10,7 +10,7 @@
         <img src="logo.png" alt="logo of the software" class="mainLogo">
         <div class="container">
             <div class="left">
-                <form id="regForm">
+                <form id="regForm" action="process.php" method="post" target="_blank">
                     <h4 id="uReg">Registration</h4>
                     <label for="uName">Name</label>
                     <br>
@@ -246,21 +246,33 @@
                     <a href="https://www.aiub.edu" target="_blank">Terms&Conditions</a>
                     <input type="checkbox" name="uCheckbox" id="uCheckbox">
                     <br><br>
-                    <button type="button" name="uReset" id="uReset">RESET</button>
-                    <button type="button" name="uSubmit" id="uSubmit">SUBMIT</button>
+                    <button type="button" name="uReset" id="uReset" style="background-color: #007bff;color: white;cursor: pointer;">RESET</button>
+                    <button type="button" name="uSubmit" id="uSubmit" style="background-color: #007bff;color: white;cursor: pointer;">SUBMIT</button>
                 </form>
             </div>
             <div class="right">
                 <div class="top">
-                    <form>
-                        <h4 id="uLog">Login</h4>
-                        <label for="logEmail">Email</label><br>
-                        <input type="email" name="logEmail" id="logEmail"><br>
-                        <label for="logPass">Password</label><br>
-                        <input type="password" name="logPass" id="logPass"><br><br>
-                        <button type="button" name="logReset" id="logReset">RESET</button>
-                        <button type="button" name="logSubmit" id="logSubmit">SUBMIT</button>
+                    <form id="loginForm" action="loginProcess.php" method="post">
+                     <h4 id="uLog">Login</h4>
+                    <label for="logEmail">Email</label><br>
+                    <input type="email" name="logEmail" id="logEmail" required><br>
+                    <label for="logPass">Password</label><br>
+                    <input type="password" name="logPass" id="logPass" required><br><br>
+
+                    <button type="button" name="logReset" id="logReset" style="background-color: #007bff;color: white;cursor: pointer;">RESET</button>
+                    <button type="button" name="logSubmit" id="logSubmit" style="background-color: #007bff;color: white;cursor: pointer;">SUBMIT</button>
                     </form>
+
+                    <script>
+                    document.getElementById("logReset").addEventListener("click", function () {
+                    document.getElementById("loginForm").reset();
+                    });
+
+                    document.getElementById("logSubmit").addEventListener("click", function () {
+                    document.getElementById("loginForm").submit();
+                    });
+                    </script>
+
                 </div>
                 <div class="bottom">
                     <div class="table-wrapper">

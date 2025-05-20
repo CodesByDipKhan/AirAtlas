@@ -1,0 +1,35 @@
+body {
+    background-color: lightcyan;
+    text-align: center; 
+}
+
+h3 {
+    font-family: Cambria;
+    font-size: 24px;
+    margin: 20px;
+    color: blue;
+}
+
+table,th,td {
+    width: 600px;
+    border: 2px solid black;
+    border-collapse: collapse;
+    background-color: lightgrey;
+    margin: auto;
+    padding: 10px;
+    font-family: Calibri;
+    font-size: 18px;
+    text-align: center;
+}
+
+button {
+    margin: 20px;
+    padding: 5px;
+    font-size: 16px;
+    font-family: Calibri;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}

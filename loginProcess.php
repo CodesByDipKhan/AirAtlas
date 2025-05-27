@@ -1,32 +1,36 @@
 <?php
+session_start();
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = $_POST['loginEmail'] ?? '';
     $password = $_POST['loginPassword'] ?? '';
 
-    $conn = new mysqli("localhost", "root", "", "AQI");
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
+    $conn = mysqli_connect("localhost", "root", "", "aqi");
+    if (!$conn) {
+        die("Connection failed.");
     }
 
-    $stmt = $conn->prepare("SELECT Name FROM User WHERE Email = ? AND Password = ?");
-    $stmt->bind_param("ss", $email, $password);
-    $stmt->execute();
-    $stmt->store_result();
+    $email = strtolower(trim($email));
+    $query = "SELECT UserID, Name, Password FROM User WHERE LOWER(Email) = '$email'";
+    $result = mysqli_query($conn, $query);
 
-    if ($stmt->num_rows === 1) {
-        $stmt->bind_result($name);
-        $stmt->fetch();
+    if (mysqli_num_rows($result) == 1) {
+        $row = mysqli_fetch_assoc($result);
+        if (password_verify($password, $row['Password'])) {
+            $_SESSION['user_id'] = $row['UserID'];
+            $_SESSION['user_name'] = $row['Name'];
+            $_SESSION['user_email'] = $email;
+            $_SESSION['logged_in'] = true;
 
-        header("Location: index.html");
-        exit();
+            header("Location: requestAQI.php");
+            exit();
+        } else {
+            echo "Wrong password.";
+        }
     } else {
-
-        echo "<script> alert('Invalid email or password!');
-        window.location.href = 'index.html';
-        </script>";
+        echo "Email not found.";
     }
 
-    $stmt->close();
-    $conn->close();
+    mysqli_close($conn);
 }
 ?>

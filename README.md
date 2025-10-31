@@ -1,2 +1,2 @@
-# Web Technology Lab
-#Air Quality Checker
+# Web Technology Lab (8th semester)
+#Air Quality Index
